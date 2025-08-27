@@ -3,28 +3,48 @@
         <head>
             <link rel="stylesheet" href="./styles.css" />
         </head>
-        <h1>
-            Lista på frukt med mera
-        </h1>
-        <ol>
-            <li>banan</li>
-            <li>kiwi <strong>(med skal)</strong></li>
-            <li>tomat</li>
-        </ol>
-        <h3>
-            Touhou swedens hemsida:
-            <a href="https://touhou.se/">touhou.se</a>
-        </h3>
-        <p>
-            gillar du touhou? 
-            <div class="button" id="touhou-knapp" role="button" tabindex="0">
-                touhou knapp
+        <div class="center">
+            <h1 class="content">
+                Suika.se
+            </h1>
+        </div>
+        <div class="center">
+            <h2 class="idk">
+                Jag har inte domänen ‎ ‎ 
+                <img src="Suika 1 (Sad).png" alt="suika sad lol" id="suika_sad" width="40">
+            </h2>
+        </div>
+        <div class="center">
+            <h3 class="center content">
+                <p>Är du intresserad av touhou?</p>
+                <p>Touhou Swedens hemsida: <a href="https://touhou.se/">Touhou.se</a></p>
+                
+            </h3>
+        </div>
+        <div class="center">
+            <div class="center content" id="output">
+                Touhou clicks: 0 Varv: 0    
             </div>
-            <span id="output">
-                Touhou clicks:
-            </span>
-        </p>
-        <img src="https://ih1.redbubble.net/image.778810259.6599/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.u3.jpg" id="suika" alt="suika" width="200">
-    <script src="knapp.js"></script>
+            <div class="content" id="cpsOutput">
+                CPS: 0
+            </div>
+        </div>
+        <div id="buttonWrapper">
+            <img id="touhou-knapp" src="suika.png" alt="Touhou Button" width="100" />
+        </div>
+        <button class="dropdown-btn">Credits ▼</button>
+        <div class="dropdown-content">
+            Credit till MagicalFish på redbubble.com för den gulliga bilden på suika och credit till Hisotensoku lobby mod för suika sad emoten ^^
+        </div>
+        <div class="right">
+            <input type="text" id="usernameInput" placeholder="Enter your name" />
+            <button id="submitNameBtn">Submit Score</button>
+            <button id="getLeaderboard">Nothing</button>
+            <div class="dropdown-btn-lead">Leaderboard ▼</div>
+            <div class="dropdown-content-lead">
+                <p id="leaderboard"></p>
+            </div>
+        </div>
     </body>
+    <script src="knapp.js"></script>
 </html>

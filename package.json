@@ -1,0 +1,23 @@
+{
+  "name": "filipmsteg.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "knapp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipmsteg/filipmsteg.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipmsteg/filipmsteg.github.io/issues"
+  },
+  "homepage": "https://github.com/filipmsteg/filipmsteg.github.io#readme",
+  "dependencies": {
+    "googleapis": "^158.0.0"
+  }
+}
