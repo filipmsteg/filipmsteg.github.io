@@ -1,0 +1,78 @@
+body{  
+    font-family:Arial, Helvetica, Sans-serif,serif;
+    font-size:15px;
+    color:#000;
+    background:#fff;
+}
+ 
+h1 {
+    font-size:40px;
+}
+ 
+h3 {
+    font-size:22px;
+}
+
+#content-wrapper {
+    width:960px;
+    text-align:left;
+    margin:0 auto;
+    background:#fff;
+    padding:15px;
+     
+}
+
+#suika {
+  width: 200px;
+  animation: spin linear infinite; /* 3s per rotation */
+  animation-duration: 0s;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.button {
+  padding: .5em .55em;
+  background: #87cef7;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  width: 100;
+  height: 17;
+}
+
+.button:hover {
+  background: #8ba6f7;
+}
+
+.button:active {
+  background: #f764e5;
+}
+
+#header{
+    width:960px;
+    height:120px;
+}
+ 
+#post-content {
+    float:left;
+    width:600px;
+    padding:0 15px 15px 15px;
+}
+ 
+.sidebar{
+    float:left;
+    width:300px;
+    margin:0 0 0 15px;
+    font-size:15px;
+    list-style:none;
+}
+ 
+#footer{
+    height: 60px;
+    background: #fff;
+    padding: 15px;
+    clear:both;
+}
