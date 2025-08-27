@@ -6,12 +6,12 @@ const cpsOutput = document.getElementById("cpsOutput");
 const myButton = document.getElementById("submitNameBtn");
 
 // Load score or set to 0
-let myVar = parseInt(localStorage.getItem("score")) || 0
-let rotate_speed = 0   // degrees per second
+let myVar = parseInt(localStorage.getItem("clicks")) || 0
+let rotate_speed = parseInt(localStorage.getItem("speed")) || 0
 let rotation = 0       // current angle in degrees
-let rotations = 0
+let rotations = parseInt(localStorage.getItem("score")) || 0
 let rotations_per_second
-let decayRate = 0.15  // 10% per second
+let decayRate = 0.1  // 10% per second
 let clickTimes = []
 
 const leaderboardContainer = document.getElementById("leaderboard");
@@ -46,9 +46,9 @@ const submitNameBtn = document.getElementById("submitNameBtn");
 
 submitNameBtn.addEventListener("click", () => {
   const username = usernameInput.value || "Player1"; // default if empty
-  const score = myVar;
+  const score = rotations;
 
-  submitScore(username, score); // your existing function
+  submitScore(username, rotations); // or myVar, whichever you want to submit
 });
 
 
@@ -77,7 +77,9 @@ function animate(time) {
     rotation %= 360
   }
   output.textContent = myVar + " │ " + rotations + " │ " +  rotations_per_second.toFixed(3)
-
+  localStorage.setItem("score", rotations)
+  localStorage.setItem("clicks", myVar)
+  localStorage.setItem("speed", rotate_speed)
   requestAnimationFrame(animate)
 }
 
@@ -96,7 +98,9 @@ function onClickButton() {
   } else {
     rotate_speed *= 1.05 // make it 10% faster each click
   }
-  localStorage.setItem("score", myVar)
+  localStorage.setItem("score", rotations)
+  localStorage.setItem("clicks", myVar)
+  localStorage.setItem("speed", rotate_speed)
 }
 
 const btn = document.querySelector('.dropdown-btn')
@@ -130,15 +134,16 @@ function submitScore(username, score) {
   fetch("/.netlify/functions/appendScore", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username, score }),
+    body: JSON.stringify({ username, score }), // ✅ Use the score parameter
   })
-    .then(res => {
-      if (!res.ok) throw new Error(`Server returned ${res.status}`);
-      return res.json();
-    })
-    .then(data => console.log("Score submitted:", data))
-    .catch(err => console.error("Error submitting score:", err));
+  .then(res => {
+    if (!res.ok) throw new Error(`Server returned ${res.status}`);
+    return res.json();
+  })
+  .then(data => console.log("Score submitted:", data))
+  .catch(err => console.error("Error submitting score:", err));
 }
+
 
 touhou_knapp.addEventListener('click', onClickButton)
 touhou_knapp.addEventListener('keydown', event => {

@@ -154,7 +154,7 @@ img {
 .right {
   position: absolute;
   top: 200px;    /* distance from top of container */
-  right: 200;     /* stick to the right */
+  right: 50;     /* stick to the right */
   width: 400px;
   text-align: right;
 }
